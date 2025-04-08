@@ -17,3 +17,12 @@ end
 
 require "lazy_setup"
 require "polish"
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  pattern = "*",
+  callback = function()
+    vim.wo.wrap = true
+    vim.wo.linebreak = true
+    vim.wo.showbreak = '↪'
+  end,
+})
