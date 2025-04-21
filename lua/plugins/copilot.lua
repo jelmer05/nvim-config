@@ -1,5 +1,16 @@
-
+-- Your Copilot config
 return {
   "github/copilot.vim",
-  event = "InsertEnter",  -- Lazy load on insert mode
+  event = "InsertEnter",
+  config = function()
+    -- Disable the default Tab mapping
+    vim.g.copilot_no_tab_map = true
+
+    -- Set a custom key mapping to accept Copilot suggestion
+    vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#Accept("<CR>")', {
+      expr = true,
+      silent = true,
+      noremap = true
+    })
+  end
 }
