@@ -1,4 +1,6 @@
 -- Your Copilot config
+-- NOTE: to disbale copilot, :Copilot disable
+-- NOTE: to enable copilot, :Copilot enable
 return {
   "github/copilot.vim",
   event = "InsertEnter",
@@ -10,7 +12,7 @@ return {
     vim.api.nvim_set_keymap("i", "<C-l>", 'copilot#Accept("<CR>")', {
       expr = true,
       silent = true,
-      noremap = true
+      noremap = true,
     })
-  end
+  end,
 }
